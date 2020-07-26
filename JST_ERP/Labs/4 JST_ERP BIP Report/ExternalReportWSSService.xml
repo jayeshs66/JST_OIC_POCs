@@ -1,0 +1,2127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wsdl:definitions
+     name="ExternalReportWSSService"
+     targetNamespace="http://xmlns.oracle.com/oxp/service/PublicReportService"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:tns="http://xmlns.oracle.com/oxp/service/PublicReportService"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+    >
+<wsp:Policy xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="ExternalReportWSSService_Fault_Policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+   <wsp:ExactlyOne>
+      <wsp:All/>
+      <wsp:All/>
+      <wsp:All/>
+      <wsp:All/>
+   </wsp:ExactlyOne>
+</wsp:Policy><wsp:Policy xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="ExternalReportWSSService_Input_Policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+   <wsp:ExactlyOne>
+      <wsp:All>
+         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+            <sp:Header Namespace="http://www.w3.org/2005/08/addressing"/>
+            <sp:Header Namespace="http://schemas.xmlsoap.org/ws/2004/08/addressing"/>
+            <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+         </sp:SignedParts>
+         <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+            <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+         </sp:EncryptedParts>
+      </wsp:All>
+      <wsp:All>
+         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+            <sp:Header Namespace="http://www.w3.org/2005/08/addressing"/>
+            <sp:Header Namespace="http://schemas.xmlsoap.org/ws/2004/08/addressing"/>
+            <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+         </sp:SignedParts>
+         <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+            <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+         </sp:EncryptedParts>
+      </wsp:All>
+      <wsp:All>
+         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+            <sp:Header Namespace="http://www.w3.org/2005/08/addressing"/>
+            <sp:Header Namespace="http://schemas.xmlsoap.org/ws/2004/08/addressing"/>
+            <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+         </sp:SignedParts>
+         <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+            <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+         </sp:EncryptedParts>
+      </wsp:All>
+      <wsp:All>
+         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+            <sp:Header Namespace="http://www.w3.org/2005/08/addressing"/>
+            <sp:Header Namespace="http://schemas.xmlsoap.org/ws/2004/08/addressing"/>
+            <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+         </sp:SignedParts>
+         <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+            <sp:Header Name="fmw-context" Namespace="http://xmlns.oracle.com/fmw/context/1.0"/>
+         </sp:EncryptedParts>
+      </wsp:All>
+   </wsp:ExactlyOne>
+</wsp:Policy><wsp:Policy xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="ExternalReportWSSService_Output_Policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+   <wsp:ExactlyOne>
+      <wsp:All>
+         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+         </sp:SignedParts>
+         <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+         </sp:EncryptedParts>
+      </wsp:All>
+      <wsp:All>
+         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+         </sp:SignedParts>
+         <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+         </sp:EncryptedParts>
+      </wsp:All>
+      <wsp:All>
+         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+         </sp:SignedParts>
+         <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+         </sp:EncryptedParts>
+      </wsp:All>
+      <wsp:All>
+         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+         </sp:SignedParts>
+         <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <sp:Body/>
+         </sp:EncryptedParts>
+      </wsp:All>
+   </wsp:ExactlyOne>
+</wsp:Policy><wsp:Policy xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="wss11_saml_or_username_token_with_message_protection_service_policy">
+   <wsp:ExactlyOne>
+      <wsp:All>
+         <sp:SymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:ProtectionToken>
+                  <wsp:Policy>
+                     <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
+                        <wsp:Policy>
+                           <sp:RequireThumbprintReference/>
+                           <sp:WssX509V3Token11/>
+                        </wsp:Policy>
+                     </sp:X509Token>
+                  </wsp:Policy>
+               </sp:ProtectionToken>
+               <sp:AlgorithmSuite>
+                  <wsp:Policy>
+                     <sp:Basic128/>
+                  </wsp:Policy>
+               </sp:AlgorithmSuite>
+               <sp:Layout>
+                  <wsp:Policy>
+                     <sp:Lax/>
+                  </wsp:Policy>
+               </sp:Layout>
+               <sp:IncludeTimestamp/>
+               <sp:ProtectTokens/>
+               <sp:OnlySignEntireHeadersAndBody/>
+            </wsp:Policy>
+         </sp:SymmetricBinding>
+         <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:SamlToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                     <sp:WssSamlV11Token11/>
+                  </wsp:Policy>
+               </sp:SamlToken>
+            </wsp:Policy>
+         </sp:SignedSupportingTokens>
+         <sp:EndorsingSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                     <sp:WssX509V3Token11/>
+                  </wsp:Policy>
+               </sp:X509Token>
+            </wsp:Policy>
+         </sp:EndorsingSupportingTokens>
+         <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:RequireSignatureConfirmation/>
+               <sp:MustSupportRefEncryptedKey/>
+            </wsp:Policy>
+         </sp:Wss11>
+      </wsp:All>
+      <wsp:All>
+         <sp:SymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:ProtectionToken>
+                  <wsp:Policy>
+                     <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
+                        <wsp:Policy>
+                           <sp:RequireThumbprintReference/>
+                           <sp:WssX509V3Token11/>
+                        </wsp:Policy>
+                     </sp:X509Token>
+                  </wsp:Policy>
+               </sp:ProtectionToken>
+               <sp:AlgorithmSuite>
+                  <wsp:Policy>
+                     <sp:Basic128Exn256/>
+                  </wsp:Policy>
+               </sp:AlgorithmSuite>
+               <sp:Layout>
+                  <wsp:Policy>
+                     <sp:Lax/>
+                  </wsp:Policy>
+               </sp:Layout>
+               <sp:IncludeTimestamp/>
+               <sp:ProtectTokens/>
+               <sp:OnlySignEntireHeadersAndBody/>
+            </wsp:Policy>
+         </sp:SymmetricBinding>
+         <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:SamlToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                     <sp:WssSamlV11Token11/>
+                  </wsp:Policy>
+               </sp:SamlToken>
+            </wsp:Policy>
+         </sp:SignedSupportingTokens>
+         <sp:EndorsingSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                     <sp:WssX509V3Token11/>
+                  </wsp:Policy>
+               </sp:X509Token>
+            </wsp:Policy>
+         </sp:EndorsingSupportingTokens>
+         <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:RequireSignatureConfirmation/>
+               <sp:MustSupportRefEncryptedKey/>
+            </wsp:Policy>
+         </sp:Wss11>
+      </wsp:All>
+      <wsp:All>
+         <sp:SymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:ProtectionToken>
+                  <wsp:Policy>
+                     <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
+                        <wsp:Policy>
+                           <sp:RequireThumbprintReference/>
+                           <sp:WssX509V3Token11/>
+                        </wsp:Policy>
+                     </sp:X509Token>
+                  </wsp:Policy>
+               </sp:ProtectionToken>
+               <sp:AlgorithmSuite>
+                  <wsp:Policy>
+                     <sp:Basic128/>
+                  </wsp:Policy>
+               </sp:AlgorithmSuite>
+               <sp:Layout>
+                  <wsp:Policy>
+                     <sp:Lax/>
+                  </wsp:Policy>
+               </sp:Layout>
+               <sp:IncludeTimestamp/>
+               <sp:OnlySignEntireHeadersAndBody/>
+            </wsp:Policy>
+         </sp:SymmetricBinding>
+         <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                     <sp:WssUsernameToken10/>
+                  </wsp:Policy>
+               </sp:UsernameToken>
+            </wsp:Policy>
+         </sp:SignedSupportingTokens>
+         <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:RequireSignatureConfirmation/>
+               <sp:MustSupportRefEncryptedKey/>
+            </wsp:Policy>
+         </sp:Wss11>
+      </wsp:All>
+      <wsp:All>
+         <sp:SymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:ProtectionToken>
+                  <wsp:Policy>
+                     <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/Never">
+                        <wsp:Policy>
+                           <sp:RequireThumbprintReference/>
+                           <sp:WssX509V3Token11/>
+                        </wsp:Policy>
+                     </sp:X509Token>
+                  </wsp:Policy>
+               </sp:ProtectionToken>
+               <sp:AlgorithmSuite>
+                  <wsp:Policy>
+                     <sp:Basic128Exn256/>
+                  </wsp:Policy>
+               </sp:AlgorithmSuite>
+               <sp:Layout>
+                  <wsp:Policy>
+                     <sp:Lax/>
+                  </wsp:Policy>
+               </sp:Layout>
+               <sp:IncludeTimestamp/>
+               <sp:OnlySignEntireHeadersAndBody/>
+            </wsp:Policy>
+         </sp:SymmetricBinding>
+         <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                     <sp:WssUsernameToken10/>
+                  </wsp:Policy>
+               </sp:UsernameToken>
+            </wsp:Policy>
+         </sp:SignedSupportingTokens>
+         <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:RequireSignatureConfirmation/>
+               <sp:MustSupportRefEncryptedKey/>
+            </wsp:Policy>
+         </sp:Wss11>
+      </wsp:All>
+      <wsp:All>
+         <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:TransportToken>
+                  <wsp:Policy>
+                     <sp:HttpsToken RequireClientCertificate="false">
+                        <wsp:Policy/>
+                     </sp:HttpsToken>
+                  </wsp:Policy>
+               </sp:TransportToken>
+               <sp:Layout>
+                  <wsp:Policy>
+                     <sp:Lax/>
+                  </wsp:Policy>
+               </sp:Layout>
+               <sp:IncludeTimestamp/>
+            </wsp:Policy>
+         </sp:TransportBinding>
+         <sp:SupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:SamlToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                     <sp:WssSamlV11Token10/>
+                  </wsp:Policy>
+               </sp:SamlToken>
+            </wsp:Policy>
+         </sp:SupportingTokens>
+      </wsp:All>
+      <wsp:All>
+         <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:TransportToken>
+                  <wsp:Policy>
+                     <sp:HttpsToken RequireClientCertificate="false">
+                        <wsp:Policy/>
+                     </sp:HttpsToken>
+                  </wsp:Policy>
+               </sp:TransportToken>
+               <sp:Layout>
+                  <wsp:Policy>
+                     <sp:Lax/>
+                  </wsp:Policy>
+               </sp:Layout>
+               <sp:IncludeTimestamp/>
+            </wsp:Policy>
+         </sp:TransportBinding>
+         <sp:SupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                     <sp:WssUsernameToken10/>
+                  </wsp:Policy>
+               </sp:UsernameToken>
+            </wsp:Policy>
+         </sp:SupportingTokens>
+      </wsp:All>
+      <wsp:All>
+         <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:TransportToken>
+                  <wsp:Policy>
+                     <sp:HttpsToken RequireClientCertificate="false">
+                        <wsp:Policy/>
+                     </sp:HttpsToken>
+                  </wsp:Policy>
+               </sp:TransportToken>
+               <sp:Layout>
+                  <wsp:Policy>
+                     <sp:Lax/>
+                  </wsp:Policy>
+               </sp:Layout>
+            </wsp:Policy>
+         </sp:TransportBinding>
+      </wsp:All>
+      <wsp:All>
+         <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+            <wsp:Policy>
+               <sp:TransportToken>
+                  <wsp:Policy>
+                     <sp:HttpsToken RequireClientCertificate="false">
+                        <wsp:Policy>
+                           <osp:HttpJwtAuthentication xmlns:osp="http://schemas.oracle.com/ws/2012/01/wssecuritypolicy"/>
+                        </wsp:Policy>
+                     </sp:HttpsToken>
+                  </wsp:Policy>
+               </sp:TransportToken>
+               <sp:Layout>
+                  <wsp:Policy>
+                     <sp:Lax/>
+                  </wsp:Policy>
+               </sp:Layout>
+            </wsp:Policy>
+         </sp:TransportBinding>
+      </wsp:All>
+   </wsp:ExactlyOne>
+</wsp:Policy>    <wsdl:types>
+        <xs:schema elementFormDefault="qualified" version="1.0" targetNamespace="http://xmlns.oracle.com/oxp/service/PublicReportService"
+             xmlns:tns="http://xmlns.oracle.com/oxp/service/PublicReportService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:element name="AccessDeniedException" nillable="true" type="tns:AccessDeniedException"/>
+            <xs:element name="InvalidParametersException" nillable="true" type="tns:InvalidParametersException"/>
+            <xs:element name="OperationFailedException" nillable="true" type="tns:OperationFailedException"/>
+            <xs:element name="SchedulingException" nillable="true" type="tns:SchedulingException"/>
+            <xs:element name="createReport">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="reportName" type="xs:string"/>
+                        <xs:element name="folderAbsolutePathURL" type="xs:string"/>
+                        <xs:element name="templateFileName" type="xs:string"/>
+                        <xs:element name="templateData" type="xs:base64Binary"/>
+                        <xs:element name="XLIFFFileName" type="xs:string"/>
+                        <xs:element name="XLIFFData" type="xs:base64Binary"/>
+                        <xs:element name="updateFlag" type="xs:boolean"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="createReportFolder">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="folderAbsolutePath" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="createReportFolderResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="createReportFolderReturn" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="createReportResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="createReportReturn" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="deleteFolder">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="folderAbsolutePath" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="deleteFolderResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="deleteFolderReturn" type="xs:boolean"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="deleteReport">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="reportAbsolutePath" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="deleteReportResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="deleteReportReturn" type="xs:boolean"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="deliveryService">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="deliveryRequest" type="tns:DeliveryRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="deliveryServiceResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="deliveryServiceReturn" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="downloadReportDataChunk">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="fileID" type="xs:string"/>
+                        <xs:element name="beginIdx" type="xs:long"/>
+                        <xs:element name="size" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="downloadReportDataChunkResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="downloadReportDataChunkReturn" type="tns:ReportDataChunk"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="downloadReportObject">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="reportAbsolutePath" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="downloadReportObjectResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="downloadReportObjectReturn" type="xs:base64Binary"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getBIPHTTPSessionInterval">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getBIPHTTPSessionIntervalResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="getBIPHTTPSessionIntervalReturn" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getDeliveryServiceDefinition">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getDeliveryServiceDefinitionResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="getDeliveryServiceDefinitionReturn" type="tns:DeliveryServiceDefinition"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getFolderContents">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="folderAbsolutePath" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getFolderContentsResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="getFolderContentsReturn" type="tns:CatalogContents"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getReportDefinition">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="reportAbsolutePath" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getReportDefinitionResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="getReportDefinitionReturn" type="tns:ReportDefinition"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getReportParameters">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="reportRequest" type="tns:ReportRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getReportParametersResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="getReportParametersReturn" type="tns:ParamNameValues"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getReportSampleData">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="reportAbsolutePath" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getReportSampleDataResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="getReportSampleDataReturn" type="xs:base64Binary"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getSecurityModel">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getSecurityModelResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="getSecurityModelReturn" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getTemplate">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="reportAbsolutePath" type="xs:string"/>
+                        <xs:element name="templateID" type="xs:string"/>
+                        <xs:element name="locale" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getTemplateParameters">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="reportAbsolutePath" type="xs:string"/>
+                        <xs:element name="templateID" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getTemplateParametersResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="getTemplateParametersReturn" type="tns:ParamNameValue" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getTemplateResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="getTemplateReturn" type="xs:base64Binary"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getXDOSchema">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="reportAbsolutePath" type="xs:string"/>
+                        <xs:element name="locale" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getXDOSchemaResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="getXDOSchemaReturn" type="xs:base64Binary"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="hasReportAccess">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="reportAbsolutePath" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="hasReportAccessResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="hasReportAccessReturn" type="xs:boolean"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="isFolderExist">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="folderAbsolutePath" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="isFolderExistResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="isFolderExistReturn" type="xs:boolean"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="isReportExist">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="reportAbsolutePath" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="isReportExistResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="isReportExistReturn" type="xs:boolean"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="removeTemplateForReport">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="reportAbsolutePath" type="xs:string"/>
+                        <xs:element name="templateFileName" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="removeTemplateForReportResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="removeTemplateForReportReturn" type="xs:boolean"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="runReport">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="reportRequest" type="tns:ReportRequest"/>
+                        <xs:element name="appParams" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="runReportResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="runReportReturn" type="tns:ReportResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="submitReport">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="submitReportData" type="xs:base64Binary"/>
+                        <xs:element name="appParams" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="submitReportResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="submitReportReturn" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="updateReportDefinition">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="reportAbsPath" type="xs:string"/>
+                        <xs:element name="newReportDefn" type="tns:ReportDefinition"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="updateReportDefinitionResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="updateReportDefinitionReturn" type="xs:boolean"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="updateTemplateForReport">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="reportAbsolutePath" type="xs:string"/>
+                        <xs:element name="templateName" type="xs:string"/>
+                        <xs:element name="locale" type="xs:string"/>
+                        <xs:element name="templateData" type="xs:base64Binary"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="updateTemplateForReportResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="updateTemplateForReportReturn" type="xs:boolean"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="uploadReportDataChunk">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="fileID" type="xs:string"/>
+                        <xs:element name="reportDataChunk" type="xs:base64Binary"/>
+                        <xs:element name="reportRawDataChunk" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="uploadReportDataChunkResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="uploadReportDataChunkReturn" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="uploadReportObject">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="reportObjectAbsolutePathURL" type="xs:string"/>
+                        <xs:element name="objectType" type="xs:string"/>
+                        <xs:element name="objectZippedData" type="xs:base64Binary"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="uploadReportObjectResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="uploadReportObjectReturn" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="uploadTemplateForReport">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="reportAbsolutePath" type="xs:string"/>
+                        <xs:element name="templateName" type="xs:string"/>
+                        <xs:element name="templateType" type="xs:string"/>
+                        <xs:element name="locale" type="xs:string"/>
+                        <xs:element name="templateData" type="xs:base64Binary"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="uploadTemplateForReportResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="uploadTemplateForReportReturn" type="xs:boolean"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="validateLogin">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="validateLoginResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="validateLoginReturn" type="xs:boolean"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="DeliveryRequest">
+                <xs:sequence>
+                    <xs:element name="contentType" type="xs:string" nillable="true"/>
+                    <xs:element name="documentData" type="xs:base64Binary" nillable="true"/>
+                    <xs:element name="dynamicDataSource" type="tns:BIPDataSource" nillable="true"/>
+                    <xs:element name="emailOption" type="tns:EMailDeliveryOption" nillable="true"/>
+                    <xs:element name="faxOption" type="tns:FaxDeliveryOption" nillable="true"/>
+                    <xs:element name="ftpOption" type="tns:FTPDeliveryOption" nillable="true"/>
+                    <xs:element name="localOption" type="tns:LocalDeliveryOption" nillable="true"/>
+                    <xs:element name="printOption" type="tns:PrintDeliveryOption" nillable="true"/>
+                    <xs:element name="webDAVOption" type="tns:WebDAVDeliveryOption" nillable="true"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="BIPDataSource">
+                <xs:sequence>
+                    <xs:element name="JDBCDataSource" type="tns:JDBCDataSource" nillable="true"/>
+                    <xs:element name="fileDataSource" type="tns:FileDataSource" nillable="true"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="JDBCDataSource">
+                <xs:sequence>
+                    <xs:element name="JDBCDriverClass" type="xs:string" nillable="true"/>
+                    <xs:element name="JDBCDriverType" type="xs:string" nillable="true"/>
+                    <xs:element name="JDBCPassword" type="xs:string" nillable="true"/>
+                    <xs:element name="JDBCURL" type="xs:string" nillable="true"/>
+                    <xs:element name="JDBCUserName" type="xs:string" nillable="true"/>
+                    <xs:element name="dataSourceName" type="xs:string" nillable="true"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="FileDataSource">
+                <xs:sequence>
+                    <xs:element name="dynamicDataSourcePath" type="xs:string" nillable="true"/>
+                    <xs:element name="temporaryDataSource" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="EMailDeliveryOption">
+                <xs:sequence>
+                    <xs:element name="emailBCC" type="xs:string" nillable="true"/>
+                    <xs:element name="emailBody" type="xs:string" nillable="true"/>
+                    <xs:element name="emailCC" type="xs:string" nillable="true"/>
+                    <xs:element name="emailFrom" type="xs:string" nillable="true"/>
+                    <xs:element name="emailReplyTo" type="xs:string" nillable="true"/>
+                    <xs:element name="emailServerName" type="xs:string" nillable="true"/>
+                    <xs:element name="emailSubject" type="xs:string" nillable="true"/>
+                    <xs:element name="emailTo" type="xs:string" nillable="true"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="FaxDeliveryOption">
+                <xs:sequence>
+                    <xs:element name="faxNumber" type="xs:string" nillable="true"/>
+                    <xs:element name="faxServer" type="xs:string" nillable="true"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="FTPDeliveryOption">
+                <xs:sequence>
+                    <xs:element name="ftpServerName" type="xs:string" nillable="true"/>
+                    <xs:element name="ftpUserName" type="xs:string" nillable="true"/>
+                    <xs:element name="ftpUserPassword" type="xs:string" nillable="true"/>
+                    <xs:element name="remoteFile" type="xs:string" nillable="true"/>
+                    <xs:element name="sftpOption" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="LocalDeliveryOption">
+                <xs:sequence>
+                    <xs:element name="destination" type="xs:string" nillable="true"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PrintDeliveryOption">
+                <xs:sequence>
+                    <xs:element name="printNumberOfCopy" type="xs:string" nillable="true"/>
+                    <xs:element name="printOrientation" type="xs:string" nillable="true"/>
+                    <xs:element name="printRange" type="xs:string" nillable="true"/>
+                    <xs:element name="printSide" type="xs:string" nillable="true"/>
+                    <xs:element name="printTray" type="xs:string" nillable="true"/>
+                    <xs:element name="printerName" type="xs:string" nillable="true"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="WebDAVDeliveryOption">
+                <xs:sequence>
+                    <xs:element name="deliveryAuthType" type="xs:string" nillable="true"/>
+                    <xs:element name="password" type="xs:string" nillable="true"/>
+                    <xs:element name="remoteFilePath" type="xs:string" nillable="true"/>
+                    <xs:element name="server" type="xs:string" nillable="true"/>
+                    <xs:element name="userName" type="xs:string" nillable="true"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AccessDeniedException">
+                <xs:sequence/>
+            </xs:complexType>
+            <xs:complexType name="ReportResponse">
+                <xs:sequence>
+                    <xs:element name="reportBytes" type="xs:base64Binary" nillable="true"/>
+                    <xs:element name="reportContentType" type="xs:string" nillable="true"/>
+                    <xs:element name="reportFileID" type="xs:string" nillable="true"/>
+                    <xs:element name="reportLocale" type="xs:string" nillable="true"/>
+                    <xs:element name="metaDataList" type="tns:MetaDataList" nillable="true"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MetaDataList">
+                <xs:sequence>
+                    <xs:element name="metaDataList" type="tns:MetaData" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MetaData">
+                <xs:sequence>
+                    <xs:element name="name" type="xs:string" minOccurs="0"/>
+                    <xs:element name="value" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ArrayOfTemplateFormatLabelValue">
+                <xs:sequence>
+                    <xs:element name="item" type="tns:TemplateFormatLabelValue" nillable="true" minOccurs="0"
+                         maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="TemplateFormatLabelValue">
+                <xs:sequence>
+                    <xs:element name="templateFormatLabel" type="xs:string" nillable="true"/>
+                    <xs:element name="templateFormatValue" type="xs:string" nillable="true"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ReportDefinition">
+                <xs:sequence>
+                    <xs:element name="autoRun" type="xs:boolean"/>
+                    <xs:element name="cacheDocument" type="xs:boolean"/>
+                    <xs:element name="defaultOutputFormat" type="xs:string" nillable="true"/>
+                    <xs:element name="defaultTemplateId" type="xs:string" nillable="true"/>
+                    <xs:element name="diagnostics" type="xs:boolean"/>
+                    <xs:element name="listOfTemplateFormatsLabelValues" type="tns:ArrayOfTemplateFormatsLabelValues"
+                         nillable="true"/>
+                    <xs:element name="onLine" type="xs:boolean"/>
+                    <xs:element name="openLinkInNewWindow" type="xs:boolean"/>
+                    <xs:element name="parameterColumns" type="xs:int"/>
+                    <xs:element name="parameterNames" type="tns:ArrayOfString" nillable="true"/>
+                    <xs:element name="reportDefnTitle" type="xs:string" nillable="true"/>
+                    <xs:element name="reportDescription" type="xs:string" nillable="true"/>
+                    <xs:element name="reportName" type="xs:string" nillable="true"/>
+                    <xs:element name="reportParameterNameValues" type="tns:ArrayOfParamNameValue"
+                         nillable="true"/>
+                    <xs:element name="reportType" type="xs:string" nillable="true"/>
+                    <xs:element name="showControls" type="xs:boolean"/>
+                    <xs:element name="showReportLinks" type="xs:boolean"/>
+                    <xs:element name="templateIds" type="tns:ArrayOfString" nillable="true"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ArrayOfTemplateFormatsLabelValues">
+                <xs:sequence>
+                    <xs:element name="item" type="tns:TemplateFormatsLabelValues" nillable="true" minOccurs="0"
+                         maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="TemplateFormatsLabelValues">
+                <xs:sequence>
+                    <xs:element name="listOfTemplateFormatLabelValue" type="tns:ArrayOfTemplateFormatLabelValue"
+                         nillable="true"/>
+                    <xs:element name="templateAvailableLocales" type="tns:ArrayOfString" nillable="true"/>
+                    <xs:element name="templateID" type="xs:string" nillable="true"/>
+                    <xs:element name="templateType" type="xs:string" nillable="true"/>
+                    <xs:element name="templateURL" type="xs:string" nillable="true"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ArrayOfString">
+                <xs:sequence>
+                    <xs:element name="item" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ArrayOfParamNameValue">
+                <xs:sequence>
+                    <xs:element name="item" type="tns:ParamNameValue" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ParamNameValue">
+                <xs:sequence>
+                    <xs:element name="UIType" type="xs:string" nillable="true"/>
+                    <xs:element name="dataType" type="xs:string" nillable="true"/>
+                    <xs:element name="dateFormatString" type="xs:string" nillable="true"/>
+                    <xs:element name="dateFrom" type="xs:string" nillable="true"/>
+                    <xs:element name="dateTo" type="xs:string" nillable="true"/>
+                    <xs:element name="defaultValue" type="xs:string" nillable="true"/>
+                    <xs:element name="fieldSize" type="xs:string" nillable="true"/>
+                    <xs:element name="label" type="xs:string" nillable="true"/>
+                    <xs:element name="lovLabels" type="tns:ArrayOfString" nillable="true"/>
+                    <xs:element name="multiValuesAllowed" type="xs:boolean"/>
+                    <xs:element name="name" type="xs:string" nillable="true"/>
+                    <xs:element name="refreshParamOnChange" type="xs:boolean"/>
+                    <xs:element name="selectAll" type="xs:boolean"/>
+                    <xs:element name="templateParam" type="xs:boolean"/>
+                    <xs:element name="useNullForAll" type="xs:boolean"/>
+                    <xs:element name="values" type="tns:ArrayOfString" nillable="true"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ReportRequest">
+                <xs:sequence>
+                    <xs:element name="XDOPropertyList" type="tns:MetaDataList" nillable="true"/>
+                    <xs:element name="attributeCalendar" type="xs:string" nillable="true"/>
+                    <xs:element name="attributeFormat" type="xs:string" nillable="true"/>
+                    <xs:element name="attributeLocale" type="xs:string" nillable="true"/>
+                    <xs:element name="attributeTemplate" type="xs:string" nillable="true"/>
+                    <xs:element name="attributeTimezone" type="xs:string" nillable="true"/>
+                    <xs:element name="attributeUILocale" type="xs:string" nillable="true"/>
+                    <xs:element name="byPassCache" type="xs:boolean"/>
+                    <xs:element name="dynamicDataSource" type="tns:BIPDataSource" nillable="true"/>
+                    <xs:element name="flattenXML" type="xs:boolean"/>
+                    <xs:element name="parameterNameValues" type="tns:ArrayOfParamNameValue" nillable="true"/>
+                    <xs:element name="reportAbsolutePath" type="xs:string" nillable="true"/>
+                    <xs:element name="reportData" type="xs:base64Binary" nillable="true"/>
+                    <xs:element name="reportOutputPath" type="xs:string" nillable="true"/>
+                    <xs:element name="reportRawData" type="xs:string" nillable="true"/>
+                    <xs:element name="sizeOfDataChunkDownload" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ParamNameValues">
+                <xs:sequence>
+                    <xs:element name="listOfParamNameValues" type="tns:ArrayOfParamNameValue" nillable="true"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ItemData">
+                <xs:sequence>
+                    <xs:element name="absolutePath" type="xs:string" nillable="true"/>
+                    <xs:element name="creationDate" type="xs:dateTime" nillable="true"/>
+                    <xs:element name="displayName" type="xs:string" nillable="true"/>
+                    <xs:element name="fileName" type="xs:string" nillable="true"/>
+                    <xs:element name="lastModified" type="xs:dateTime" nillable="true"/>
+                    <xs:element name="lastModifier" type="xs:string" nillable="true"/>
+                    <xs:element name="owner" type="xs:string" nillable="true"/>
+                    <xs:element name="parentAbsolutePath" type="xs:string" nillable="true"/>
+                    <xs:element name="type" type="xs:string" nillable="true"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="DeliveryServiceDefinition">
+                <xs:sequence>
+                    <xs:element name="EMailServerNames" type="tns:ArrayOfString" nillable="true"/>
+                    <xs:element name="FTPServerNames" type="tns:ArrayOfString" nillable="true"/>
+                    <xs:element name="HTTPServerNames" type="tns:ArrayOfString" nillable="true"/>
+                    <xs:element name="SFTPServerNames" type="tns:ArrayOfString" nillable="true"/>
+                    <xs:element name="defaultServerNames" type="tns:ArrayOfString" nillable="true"/>
+                    <xs:element name="faxServerNames" type="tns:ArrayOfString" nillable="true"/>
+                    <xs:element name="printerNames" type="tns:ArrayOfString" nillable="true"/>
+                    <xs:element name="webDAVServerNames" type="tns:ArrayOfString" nillable="true"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ReportDataChunk">
+                <xs:sequence>
+                    <xs:element name="reportDataChunk" type="xs:base64Binary" nillable="true"/>
+                    <xs:element name="reportDataFileID" type="xs:string" nillable="true"/>
+                    <xs:element name="reportDataOffset" type="xs:long"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CatalogContents">
+                <xs:sequence>
+                    <xs:element name="catalogContents" type="tns:ArrayOfItemData" nillable="true"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ArrayOfItemData">
+                <xs:sequence>
+                    <xs:element name="item" type="tns:ItemData" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="InvalidParametersException">
+                <xs:sequence/>
+            </xs:complexType>
+            <xs:complexType name="SchedulingException">
+                <xs:sequence/>
+            </xs:complexType>
+            <xs:complexType name="OperationFailedException">
+                <xs:sequence/>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getSecurityModelInput">
+        <wsdl:part name="parameters" element="tns:getSecurityModel"/>
+    </wsdl:message>
+    <wsdl:message name="getSecurityModelOutput">
+        <wsdl:part name="parameters" element="tns:getSecurityModelResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getBIPHTTPSessionIntervalInput">
+        <wsdl:part name="parameters" element="tns:getBIPHTTPSessionInterval"/>
+    </wsdl:message>
+    <wsdl:message name="getBIPHTTPSessionIntervalOutput">
+        <wsdl:part name="parameters" element="tns:getBIPHTTPSessionIntervalResponse"/>
+    </wsdl:message>
+    <wsdl:message name="runReportInput">
+        <wsdl:part name="parameters" element="tns:runReport"/>
+    </wsdl:message>
+    <wsdl:message name="runReportOutput">
+        <wsdl:part name="parameters" element="tns:runReportResponse"/>
+    </wsdl:message>
+    <wsdl:message name="InvalidParametersException">
+        <wsdl:part name="InvalidParametersException" element="tns:InvalidParametersException"/>
+    </wsdl:message>
+    <wsdl:message name="AccessDeniedException">
+        <wsdl:part name="AccessDeniedException" element="tns:AccessDeniedException"/>
+    </wsdl:message>
+    <wsdl:message name="OperationFailedException">
+        <wsdl:part name="OperationFailedException" element="tns:OperationFailedException"/>
+    </wsdl:message>
+    <wsdl:message name="getReportDefinitionInput">
+        <wsdl:part name="parameters" element="tns:getReportDefinition"/>
+    </wsdl:message>
+    <wsdl:message name="getReportDefinitionOutput">
+        <wsdl:part name="parameters" element="tns:getReportDefinitionResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getTemplateInput">
+        <wsdl:part name="parameters" element="tns:getTemplate"/>
+    </wsdl:message>
+    <wsdl:message name="getTemplateOutput">
+        <wsdl:part name="parameters" element="tns:getTemplateResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getReportSampleDataInput">
+        <wsdl:part name="parameters" element="tns:getReportSampleData"/>
+    </wsdl:message>
+    <wsdl:message name="getReportSampleDataOutput">
+        <wsdl:part name="parameters" element="tns:getReportSampleDataResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getXDOSchemaInput">
+        <wsdl:part name="parameters" element="tns:getXDOSchema"/>
+    </wsdl:message>
+    <wsdl:message name="getXDOSchemaOutput">
+        <wsdl:part name="parameters" element="tns:getXDOSchemaResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getReportParametersInput">
+        <wsdl:part name="parameters" element="tns:getReportParameters"/>
+    </wsdl:message>
+    <wsdl:message name="getReportParametersOutput">
+        <wsdl:part name="parameters" element="tns:getReportParametersResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getTemplateParametersInput">
+        <wsdl:part name="parameters" element="tns:getTemplateParameters"/>
+    </wsdl:message>
+    <wsdl:message name="getTemplateParametersOutput">
+        <wsdl:part name="parameters" element="tns:getTemplateParametersResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getFolderContentsInput">
+        <wsdl:part name="parameters" element="tns:getFolderContents"/>
+    </wsdl:message>
+    <wsdl:message name="getFolderContentsOutput">
+        <wsdl:part name="parameters" element="tns:getFolderContentsResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getDeliveryServiceDefinitionInput">
+        <wsdl:part name="parameters" element="tns:getDeliveryServiceDefinition"/>
+    </wsdl:message>
+    <wsdl:message name="getDeliveryServiceDefinitionOutput">
+        <wsdl:part name="parameters" element="tns:getDeliveryServiceDefinitionResponse"/>
+    </wsdl:message>
+    <wsdl:message name="deliveryServiceInput">
+        <wsdl:part name="parameters" element="tns:deliveryService"/>
+    </wsdl:message>
+    <wsdl:message name="deliveryServiceOutput">
+        <wsdl:part name="parameters" element="tns:deliveryServiceResponse"/>
+    </wsdl:message>
+    <wsdl:message name="validateLoginInput">
+        <wsdl:part name="parameters" element="tns:validateLogin"/>
+    </wsdl:message>
+    <wsdl:message name="validateLoginOutput">
+        <wsdl:part name="parameters" element="tns:validateLoginResponse"/>
+    </wsdl:message>
+    <wsdl:message name="hasReportAccessInput">
+        <wsdl:part name="parameters" element="tns:hasReportAccess"/>
+    </wsdl:message>
+    <wsdl:message name="hasReportAccessOutput">
+        <wsdl:part name="parameters" element="tns:hasReportAccessResponse"/>
+    </wsdl:message>
+    <wsdl:message name="isReportExistInput">
+        <wsdl:part name="parameters" element="tns:isReportExist"/>
+    </wsdl:message>
+    <wsdl:message name="isReportExistOutput">
+        <wsdl:part name="parameters" element="tns:isReportExistResponse"/>
+    </wsdl:message>
+    <wsdl:message name="isFolderExistInput">
+        <wsdl:part name="parameters" element="tns:isFolderExist"/>
+    </wsdl:message>
+    <wsdl:message name="isFolderExistOutput">
+        <wsdl:part name="parameters" element="tns:isFolderExistResponse"/>
+    </wsdl:message>
+    <wsdl:message name="createReportInput">
+        <wsdl:part name="parameters" element="tns:createReport"/>
+    </wsdl:message>
+    <wsdl:message name="createReportOutput">
+        <wsdl:part name="parameters" element="tns:createReportResponse"/>
+    </wsdl:message>
+    <wsdl:message name="updateReportDefinitionInput">
+        <wsdl:part name="parameters" element="tns:updateReportDefinition"/>
+    </wsdl:message>
+    <wsdl:message name="updateReportDefinitionOutput">
+        <wsdl:part name="parameters" element="tns:updateReportDefinitionResponse"/>
+    </wsdl:message>
+    <wsdl:message name="createReportFolderInput">
+        <wsdl:part name="parameters" element="tns:createReportFolder"/>
+    </wsdl:message>
+    <wsdl:message name="createReportFolderOutput">
+        <wsdl:part name="parameters" element="tns:createReportFolderResponse"/>
+    </wsdl:message>
+    <wsdl:message name="uploadTemplateForReportInput">
+        <wsdl:part name="parameters" element="tns:uploadTemplateForReport"/>
+    </wsdl:message>
+    <wsdl:message name="uploadTemplateForReportOutput">
+        <wsdl:part name="parameters" element="tns:uploadTemplateForReportResponse"/>
+    </wsdl:message>
+    <wsdl:message name="updateTemplateForReportInput">
+        <wsdl:part name="parameters" element="tns:updateTemplateForReport"/>
+    </wsdl:message>
+    <wsdl:message name="updateTemplateForReportOutput">
+        <wsdl:part name="parameters" element="tns:updateTemplateForReportResponse"/>
+    </wsdl:message>
+    <wsdl:message name="removeTemplateForReportInput">
+        <wsdl:part name="parameters" element="tns:removeTemplateForReport"/>
+    </wsdl:message>
+    <wsdl:message name="removeTemplateForReportOutput">
+        <wsdl:part name="parameters" element="tns:removeTemplateForReportResponse"/>
+    </wsdl:message>
+    <wsdl:message name="uploadReportDataChunkInput">
+        <wsdl:part name="parameters" element="tns:uploadReportDataChunk"/>
+    </wsdl:message>
+    <wsdl:message name="uploadReportDataChunkOutput">
+        <wsdl:part name="parameters" element="tns:uploadReportDataChunkResponse"/>
+    </wsdl:message>
+    <wsdl:message name="downloadReportDataChunkInput">
+        <wsdl:part name="parameters" element="tns:downloadReportDataChunk"/>
+    </wsdl:message>
+    <wsdl:message name="downloadReportDataChunkOutput">
+        <wsdl:part name="parameters" element="tns:downloadReportDataChunkResponse"/>
+    </wsdl:message>
+    <wsdl:message name="uploadReportObjectInput">
+        <wsdl:part name="parameters" element="tns:uploadReportObject"/>
+    </wsdl:message>
+    <wsdl:message name="uploadReportObjectOutput">
+        <wsdl:part name="parameters" element="tns:uploadReportObjectResponse"/>
+    </wsdl:message>
+    <wsdl:message name="deleteReportInput">
+        <wsdl:part name="parameters" element="tns:deleteReport"/>
+    </wsdl:message>
+    <wsdl:message name="deleteReportOutput">
+        <wsdl:part name="parameters" element="tns:deleteReportResponse"/>
+    </wsdl:message>
+    <wsdl:message name="deleteFolderInput">
+        <wsdl:part name="parameters" element="tns:deleteFolder"/>
+    </wsdl:message>
+    <wsdl:message name="deleteFolderOutput">
+        <wsdl:part name="parameters" element="tns:deleteFolderResponse"/>
+    </wsdl:message>
+    <wsdl:message name="downloadReportObjectInput">
+        <wsdl:part name="parameters" element="tns:downloadReportObject"/>
+    </wsdl:message>
+    <wsdl:message name="downloadReportObjectOutput">
+        <wsdl:part name="parameters" element="tns:downloadReportObjectResponse"/>
+    </wsdl:message>
+    <wsdl:message name="submitReportInput">
+        <wsdl:part name="parameters" element="tns:submitReport"/>
+    </wsdl:message>
+    <wsdl:message name="submitReportOutput">
+        <wsdl:part name="parameters" element="tns:submitReportResponse"/>
+    </wsdl:message>
+    <wsdl:message name="SchedulingException">
+        <wsdl:part name="SchedulingException" element="tns:SchedulingException"/>
+    </wsdl:message>
+    <wsdl:portType name="ExternalReportWSSService">
+        <wsdl:operation name="getSecurityModel">
+            <wsdl:input message="tns:getSecurityModelInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/getSecurityModelRequest"/>
+            <wsdl:output message="tns:getSecurityModelOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/getSecurityModelResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getBIPHTTPSessionInterval">
+            <wsdl:input message="tns:getBIPHTTPSessionIntervalInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/getBIPHTTPSessionIntervalRequest"/>
+            <wsdl:output message="tns:getBIPHTTPSessionIntervalOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/getBIPHTTPSessionIntervalResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="runReport">
+            <wsdl:input message="tns:runReportInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/runReportRequest"/>
+            <wsdl:output message="tns:runReportOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/runReportResponse"/>
+            <wsdl:fault name="InvalidParametersException" message="tns:InvalidParametersException"/>
+            <wsdl:fault name="AccessDeniedException" message="tns:AccessDeniedException"/>
+            <wsdl:fault name="OperationFailedException" message="tns:OperationFailedException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getReportDefinition">
+            <wsdl:input message="tns:getReportDefinitionInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/getReportDefinitionRequest"/>
+            <wsdl:output message="tns:getReportDefinitionOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/getReportDefinitionResponse"/>
+            <wsdl:fault name="InvalidParametersException" message="tns:InvalidParametersException"/>
+            <wsdl:fault name="AccessDeniedException" message="tns:AccessDeniedException"/>
+            <wsdl:fault name="OperationFailedException" message="tns:OperationFailedException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getTemplate">
+            <wsdl:input message="tns:getTemplateInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/getTemplateRequest"/>
+            <wsdl:output message="tns:getTemplateOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/getTemplateResponse"/>
+            <wsdl:fault name="InvalidParametersException" message="tns:InvalidParametersException"/>
+            <wsdl:fault name="AccessDeniedException" message="tns:AccessDeniedException"/>
+            <wsdl:fault name="OperationFailedException" message="tns:OperationFailedException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getReportSampleData">
+            <wsdl:input message="tns:getReportSampleDataInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/getReportSampleDataRequest"/>
+            <wsdl:output message="tns:getReportSampleDataOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/getReportSampleDataResponse"/>
+            <wsdl:fault name="InvalidParametersException" message="tns:InvalidParametersException"/>
+            <wsdl:fault name="AccessDeniedException" message="tns:AccessDeniedException"/>
+            <wsdl:fault name="OperationFailedException" message="tns:OperationFailedException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getXDOSchema">
+            <wsdl:input message="tns:getXDOSchemaInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/getXDOSchemaRequest"/>
+            <wsdl:output message="tns:getXDOSchemaOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/getXDOSchemaResponse"/>
+            <wsdl:fault name="InvalidParametersException" message="tns:InvalidParametersException"/>
+            <wsdl:fault name="AccessDeniedException" message="tns:AccessDeniedException"/>
+            <wsdl:fault name="OperationFailedException" message="tns:OperationFailedException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getReportParameters">
+            <wsdl:input message="tns:getReportParametersInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/getReportParametersRequest"/>
+            <wsdl:output message="tns:getReportParametersOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/getReportParametersResponse"/>
+            <wsdl:fault name="InvalidParametersException" message="tns:InvalidParametersException"/>
+            <wsdl:fault name="AccessDeniedException" message="tns:AccessDeniedException"/>
+            <wsdl:fault name="OperationFailedException" message="tns:OperationFailedException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getTemplateParameters">
+            <wsdl:input message="tns:getTemplateParametersInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/getTemplateParametersRequest"/>
+            <wsdl:output message="tns:getTemplateParametersOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/getTemplateParametersResponse"/>
+            <wsdl:fault name="InvalidParametersException" message="tns:InvalidParametersException"/>
+            <wsdl:fault name="AccessDeniedException" message="tns:AccessDeniedException"/>
+            <wsdl:fault name="OperationFailedException" message="tns:OperationFailedException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getFolderContents">
+            <wsdl:input message="tns:getFolderContentsInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/getFolderContentsRequest"/>
+            <wsdl:output message="tns:getFolderContentsOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/getFolderContentsResponse"/>
+            <wsdl:fault name="InvalidParametersException" message="tns:InvalidParametersException"/>
+            <wsdl:fault name="AccessDeniedException" message="tns:AccessDeniedException"/>
+            <wsdl:fault name="OperationFailedException" message="tns:OperationFailedException"/>
+        </wsdl:operation>
+        <wsdl:operation name="getDeliveryServiceDefinition">
+            <wsdl:input message="tns:getDeliveryServiceDefinitionInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/getDeliveryServiceDefinitionRequest"/>
+            <wsdl:output message="tns:getDeliveryServiceDefinitionOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/getDeliveryServiceDefinitionResponse"/>
+            <wsdl:fault name="AccessDeniedException" message="tns:AccessDeniedException"/>
+        </wsdl:operation>
+        <wsdl:operation name="deliveryService">
+            <wsdl:input message="tns:deliveryServiceInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/deliveryServiceRequest"/>
+            <wsdl:output message="tns:deliveryServiceOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/deliveryServiceResponse"/>
+            <wsdl:fault name="InvalidParametersException" message="tns:InvalidParametersException"/>
+            <wsdl:fault name="AccessDeniedException" message="tns:AccessDeniedException"/>
+            <wsdl:fault name="OperationFailedException" message="tns:OperationFailedException"/>
+        </wsdl:operation>
+        <wsdl:operation name="validateLogin">
+            <wsdl:input message="tns:validateLoginInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/validateLoginRequest"/>
+            <wsdl:output message="tns:validateLoginOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/validateLoginResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="hasReportAccess">
+            <wsdl:input message="tns:hasReportAccessInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/hasReportAccessRequest"/>
+            <wsdl:output message="tns:hasReportAccessOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/hasReportAccessResponse"/>
+            <wsdl:fault name="InvalidParametersException" message="tns:InvalidParametersException"/>
+        </wsdl:operation>
+        <wsdl:operation name="isReportExist">
+            <wsdl:input message="tns:isReportExistInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/isReportExistRequest"/>
+            <wsdl:output message="tns:isReportExistOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/isReportExistResponse"/>
+            <wsdl:fault name="AccessDeniedException" message="tns:AccessDeniedException"/>
+        </wsdl:operation>
+        <wsdl:operation name="isFolderExist">
+            <wsdl:input message="tns:isFolderExistInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/isFolderExistRequest"/>
+            <wsdl:output message="tns:isFolderExistOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/isFolderExistResponse"/>
+            <wsdl:fault name="AccessDeniedException" message="tns:AccessDeniedException"/>
+        </wsdl:operation>
+        <wsdl:operation name="createReport">
+            <wsdl:input message="tns:createReportInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/createReportRequest"/>
+            <wsdl:output message="tns:createReportOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/createReportResponse"/>
+            <wsdl:fault name="InvalidParametersException" message="tns:InvalidParametersException"/>
+            <wsdl:fault name="AccessDeniedException" message="tns:AccessDeniedException"/>
+            <wsdl:fault name="OperationFailedException" message="tns:OperationFailedException"/>
+        </wsdl:operation>
+        <wsdl:operation name="updateReportDefinition">
+            <wsdl:input message="tns:updateReportDefinitionInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/updateReportDefinitionRequest"/>
+            <wsdl:output message="tns:updateReportDefinitionOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/updateReportDefinitionResponse"/>
+            <wsdl:fault name="InvalidParametersException" message="tns:InvalidParametersException"/>
+            <wsdl:fault name="AccessDeniedException" message="tns:AccessDeniedException"/>
+            <wsdl:fault name="OperationFailedException" message="tns:OperationFailedException"/>
+        </wsdl:operation>
+        <wsdl:operation name="createReportFolder">
+            <wsdl:input message="tns:createReportFolderInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/createReportFolderRequest"/>
+            <wsdl:output message="tns:createReportFolderOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/createReportFolderResponse"/>
+            <wsdl:fault name="InvalidParametersException" message="tns:InvalidParametersException"/>
+            <wsdl:fault name="AccessDeniedException" message="tns:AccessDeniedException"/>
+            <wsdl:fault name="OperationFailedException" message="tns:OperationFailedException"/>
+        </wsdl:operation>
+        <wsdl:operation name="uploadTemplateForReport">
+            <wsdl:input message="tns:uploadTemplateForReportInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/uploadTemplateForReportRequest"/>
+            <wsdl:output message="tns:uploadTemplateForReportOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/uploadTemplateForReportResponse"/>
+            <wsdl:fault name="InvalidParametersException" message="tns:InvalidParametersException"/>
+            <wsdl:fault name="AccessDeniedException" message="tns:AccessDeniedException"/>
+            <wsdl:fault name="OperationFailedException" message="tns:OperationFailedException"/>
+        </wsdl:operation>
+        <wsdl:operation name="updateTemplateForReport">
+            <wsdl:input message="tns:updateTemplateForReportInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/updateTemplateForReportRequest"/>
+            <wsdl:output message="tns:updateTemplateForReportOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/updateTemplateForReportResponse"/>
+            <wsdl:fault name="InvalidParametersException" message="tns:InvalidParametersException"/>
+            <wsdl:fault name="AccessDeniedException" message="tns:AccessDeniedException"/>
+            <wsdl:fault name="OperationFailedException" message="tns:OperationFailedException"/>
+        </wsdl:operation>
+        <wsdl:operation name="removeTemplateForReport">
+            <wsdl:input message="tns:removeTemplateForReportInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/removeTemplateForReportRequest"/>
+            <wsdl:output message="tns:removeTemplateForReportOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/removeTemplateForReportResponse"/>
+            <wsdl:fault name="InvalidParametersException" message="tns:InvalidParametersException"/>
+            <wsdl:fault name="AccessDeniedException" message="tns:AccessDeniedException"/>
+            <wsdl:fault name="OperationFailedException" message="tns:OperationFailedException"/>
+        </wsdl:operation>
+        <wsdl:operation name="uploadReportDataChunk">
+            <wsdl:input message="tns:uploadReportDataChunkInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/uploadReportDataChunkRequest"/>
+            <wsdl:output message="tns:uploadReportDataChunkOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/uploadReportDataChunkResponse"/>
+            <wsdl:fault name="OperationFailedException" message="tns:OperationFailedException"/>
+        </wsdl:operation>
+        <wsdl:operation name="downloadReportDataChunk">
+            <wsdl:input message="tns:downloadReportDataChunkInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/downloadReportDataChunkRequest"/>
+            <wsdl:output message="tns:downloadReportDataChunkOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/downloadReportDataChunkResponse"/>
+            <wsdl:fault name="OperationFailedException" message="tns:OperationFailedException"/>
+        </wsdl:operation>
+        <wsdl:operation name="uploadReportObject">
+            <wsdl:input message="tns:uploadReportObjectInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/uploadReportObjectRequest"/>
+            <wsdl:output message="tns:uploadReportObjectOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/uploadReportObjectResponse"/>
+            <wsdl:fault name="InvalidParametersException" message="tns:InvalidParametersException"/>
+            <wsdl:fault name="AccessDeniedException" message="tns:AccessDeniedException"/>
+            <wsdl:fault name="OperationFailedException" message="tns:OperationFailedException"/>
+        </wsdl:operation>
+        <wsdl:operation name="deleteReport">
+            <wsdl:input message="tns:deleteReportInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/deleteReportRequest"/>
+            <wsdl:output message="tns:deleteReportOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/deleteReportResponse"/>
+            <wsdl:fault name="InvalidParametersException" message="tns:InvalidParametersException"/>
+            <wsdl:fault name="AccessDeniedException" message="tns:AccessDeniedException"/>
+            <wsdl:fault name="OperationFailedException" message="tns:OperationFailedException"/>
+        </wsdl:operation>
+        <wsdl:operation name="deleteFolder">
+            <wsdl:input message="tns:deleteFolderInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/deleteFolderRequest"/>
+            <wsdl:output message="tns:deleteFolderOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/deleteFolderResponse"/>
+            <wsdl:fault name="InvalidParametersException" message="tns:InvalidParametersException"/>
+            <wsdl:fault name="AccessDeniedException" message="tns:AccessDeniedException"/>
+            <wsdl:fault name="OperationFailedException" message="tns:OperationFailedException"/>
+        </wsdl:operation>
+        <wsdl:operation name="downloadReportObject">
+            <wsdl:input message="tns:downloadReportObjectInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/downloadReportObjectRequest"/>
+            <wsdl:output message="tns:downloadReportObjectOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/downloadReportObjectResponse"/>
+            <wsdl:fault name="InvalidParametersException" message="tns:InvalidParametersException"/>
+            <wsdl:fault name="AccessDeniedException" message="tns:AccessDeniedException"/>
+            <wsdl:fault name="OperationFailedException" message="tns:OperationFailedException"/>
+        </wsdl:operation>
+        <wsdl:operation name="submitReport">
+            <wsdl:input message="tns:submitReportInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/ExternalReportWSSService/submitReportRequest"/>
+            <wsdl:output message="tns:submitReportOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl"
+                 ns1:Action="http://xmlns.oracle.com/oxp/service/PublicReportService/PublicReportService/ExternalReportWSSService/submitReportResponse"/>
+            <wsdl:fault name="SchedulingException" message="tns:SchedulingException"/>
+            <wsdl:fault name="AccessDeniedException" message="tns:AccessDeniedException"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="ExternalReportWSSServiceSoapHttp" type="tns:ExternalReportWSSService">
+        <soap12:binding style="document" transport="http://www.w3.org/2003/05/soap/bindings/HTTP/"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#wss11_saml_or_username_token_with_message_protection_service_policy" wsdl:required="false"/>
+        <wsdl:operation name="getSecurityModel">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Input_Policy" wsdl:required="false"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Output_Policy" wsdl:required="false"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getBIPHTTPSessionInterval">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Input_Policy" wsdl:required="false"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Output_Policy" wsdl:required="false"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="runReport">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Input_Policy" wsdl:required="false"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Output_Policy" wsdl:required="false"/>
+            </wsdl:output>
+            <wsdl:fault name="InvalidParametersException">
+                <soap12:fault name="InvalidParametersException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="AccessDeniedException">
+                <soap12:fault name="AccessDeniedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="OperationFailedException">
+                <soap12:fault name="OperationFailedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getReportDefinition">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Input_Policy" wsdl:required="false"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Output_Policy" wsdl:required="false"/>
+            </wsdl:output>
+            <wsdl:fault name="InvalidParametersException">
+                <soap12:fault name="InvalidParametersException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="AccessDeniedException">
+                <soap12:fault name="AccessDeniedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="OperationFailedException">
+                <soap12:fault name="OperationFailedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getTemplate">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Input_Policy" wsdl:required="false"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Output_Policy" wsdl:required="false"/>
+            </wsdl:output>
+            <wsdl:fault name="InvalidParametersException">
+                <soap12:fault name="InvalidParametersException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="AccessDeniedException">
+                <soap12:fault name="AccessDeniedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="OperationFailedException">
+                <soap12:fault name="OperationFailedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getReportSampleData">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Input_Policy" wsdl:required="false"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Output_Policy" wsdl:required="false"/>
+            </wsdl:output>
+            <wsdl:fault name="InvalidParametersException">
+                <soap12:fault name="InvalidParametersException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="AccessDeniedException">
+                <soap12:fault name="AccessDeniedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="OperationFailedException">
+                <soap12:fault name="OperationFailedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getXDOSchema">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Input_Policy" wsdl:required="false"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Output_Policy" wsdl:required="false"/>
+            </wsdl:output>
+            <wsdl:fault name="InvalidParametersException">
+                <soap12:fault name="InvalidParametersException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="AccessDeniedException">
+                <soap12:fault name="AccessDeniedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="OperationFailedException">
+                <soap12:fault name="OperationFailedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getReportParameters">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Input_Policy" wsdl:required="false"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Output_Policy" wsdl:required="false"/>
+            </wsdl:output>
+            <wsdl:fault name="InvalidParametersException">
+                <soap12:fault name="InvalidParametersException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="AccessDeniedException">
+                <soap12:fault name="AccessDeniedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="OperationFailedException">
+                <soap12:fault name="OperationFailedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getTemplateParameters">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Input_Policy" wsdl:required="false"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Output_Policy" wsdl:required="false"/>
+            </wsdl:output>
+            <wsdl:fault name="InvalidParametersException">
+                <soap12:fault name="InvalidParametersException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="AccessDeniedException">
+                <soap12:fault name="AccessDeniedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="OperationFailedException">
+                <soap12:fault name="OperationFailedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getFolderContents">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Input_Policy" wsdl:required="false"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Output_Policy" wsdl:required="false"/>
+            </wsdl:output>
+            <wsdl:fault name="InvalidParametersException">
+                <soap12:fault name="InvalidParametersException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="AccessDeniedException">
+                <soap12:fault name="AccessDeniedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="OperationFailedException">
+                <soap12:fault name="OperationFailedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="getDeliveryServiceDefinition">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Input_Policy" wsdl:required="false"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Output_Policy" wsdl:required="false"/>
+            </wsdl:output>
+            <wsdl:fault name="AccessDeniedException">
+                <soap12:fault name="AccessDeniedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="deliveryService">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Input_Policy" wsdl:required="false"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Output_Policy" wsdl:required="false"/>
+            </wsdl:output>
+            <wsdl:fault name="InvalidParametersException">
+                <soap12:fault name="InvalidParametersException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="AccessDeniedException">
+                <soap12:fault name="AccessDeniedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="OperationFailedException">
+                <soap12:fault name="OperationFailedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="validateLogin">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Input_Policy" wsdl:required="false"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Output_Policy" wsdl:required="false"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="hasReportAccess">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Input_Policy" wsdl:required="false"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Output_Policy" wsdl:required="false"/>
+            </wsdl:output>
+            <wsdl:fault name="InvalidParametersException">
+                <soap12:fault name="InvalidParametersException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="isReportExist">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Input_Policy" wsdl:required="false"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Output_Policy" wsdl:required="false"/>
+            </wsdl:output>
+            <wsdl:fault name="AccessDeniedException">
+                <soap12:fault name="AccessDeniedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="isFolderExist">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Input_Policy" wsdl:required="false"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Output_Policy" wsdl:required="false"/>
+            </wsdl:output>
+            <wsdl:fault name="AccessDeniedException">
+                <soap12:fault name="AccessDeniedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="createReport">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Input_Policy" wsdl:required="false"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Output_Policy" wsdl:required="false"/>
+            </wsdl:output>
+            <wsdl:fault name="InvalidParametersException">
+                <soap12:fault name="InvalidParametersException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="AccessDeniedException">
+                <soap12:fault name="AccessDeniedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="OperationFailedException">
+                <soap12:fault name="OperationFailedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateReportDefinition">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Input_Policy" wsdl:required="false"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Output_Policy" wsdl:required="false"/>
+            </wsdl:output>
+            <wsdl:fault name="InvalidParametersException">
+                <soap12:fault name="InvalidParametersException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="AccessDeniedException">
+                <soap12:fault name="AccessDeniedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="OperationFailedException">
+                <soap12:fault name="OperationFailedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="createReportFolder">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Input_Policy" wsdl:required="false"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Output_Policy" wsdl:required="false"/>
+            </wsdl:output>
+            <wsdl:fault name="InvalidParametersException">
+                <soap12:fault name="InvalidParametersException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="AccessDeniedException">
+                <soap12:fault name="AccessDeniedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="OperationFailedException">
+                <soap12:fault name="OperationFailedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="uploadTemplateForReport">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Input_Policy" wsdl:required="false"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Output_Policy" wsdl:required="false"/>
+            </wsdl:output>
+            <wsdl:fault name="InvalidParametersException">
+                <soap12:fault name="InvalidParametersException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="AccessDeniedException">
+                <soap12:fault name="AccessDeniedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="OperationFailedException">
+                <soap12:fault name="OperationFailedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="updateTemplateForReport">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Input_Policy" wsdl:required="false"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Output_Policy" wsdl:required="false"/>
+            </wsdl:output>
+            <wsdl:fault name="InvalidParametersException">
+                <soap12:fault name="InvalidParametersException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="AccessDeniedException">
+                <soap12:fault name="AccessDeniedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="OperationFailedException">
+                <soap12:fault name="OperationFailedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="removeTemplateForReport">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Input_Policy" wsdl:required="false"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Output_Policy" wsdl:required="false"/>
+            </wsdl:output>
+            <wsdl:fault name="InvalidParametersException">
+                <soap12:fault name="InvalidParametersException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="AccessDeniedException">
+                <soap12:fault name="AccessDeniedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="OperationFailedException">
+                <soap12:fault name="OperationFailedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="uploadReportDataChunk">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Input_Policy" wsdl:required="false"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Output_Policy" wsdl:required="false"/>
+            </wsdl:output>
+            <wsdl:fault name="OperationFailedException">
+                <soap12:fault name="OperationFailedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="downloadReportDataChunk">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Input_Policy" wsdl:required="false"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Output_Policy" wsdl:required="false"/>
+            </wsdl:output>
+            <wsdl:fault name="OperationFailedException">
+                <soap12:fault name="OperationFailedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="uploadReportObject">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Input_Policy" wsdl:required="false"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Output_Policy" wsdl:required="false"/>
+            </wsdl:output>
+            <wsdl:fault name="InvalidParametersException">
+                <soap12:fault name="InvalidParametersException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="AccessDeniedException">
+                <soap12:fault name="AccessDeniedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="OperationFailedException">
+                <soap12:fault name="OperationFailedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="deleteReport">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Input_Policy" wsdl:required="false"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Output_Policy" wsdl:required="false"/>
+            </wsdl:output>
+            <wsdl:fault name="InvalidParametersException">
+                <soap12:fault name="InvalidParametersException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="AccessDeniedException">
+                <soap12:fault name="AccessDeniedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="OperationFailedException">
+                <soap12:fault name="OperationFailedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="deleteFolder">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Input_Policy" wsdl:required="false"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Output_Policy" wsdl:required="false"/>
+            </wsdl:output>
+            <wsdl:fault name="InvalidParametersException">
+                <soap12:fault name="InvalidParametersException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="AccessDeniedException">
+                <soap12:fault name="AccessDeniedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="OperationFailedException">
+                <soap12:fault name="OperationFailedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="downloadReportObject">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Input_Policy" wsdl:required="false"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Output_Policy" wsdl:required="false"/>
+            </wsdl:output>
+            <wsdl:fault name="InvalidParametersException">
+                <soap12:fault name="InvalidParametersException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="AccessDeniedException">
+                <soap12:fault name="AccessDeniedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="OperationFailedException">
+                <soap12:fault name="OperationFailedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="submitReport">
+            <soap12:operation soapAction="" soapActionRequired="false"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Input_Policy" wsdl:required="false"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Output_Policy" wsdl:required="false"/>
+            </wsdl:output>
+            <wsdl:fault name="SchedulingException">
+                <soap12:fault name="SchedulingException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+            <wsdl:fault name="AccessDeniedException">
+                <soap12:fault name="AccessDeniedException" use="literal" encodingStyle=""/>
+      <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#ExternalReportWSSService_Fault_Policy" wsdl:required="false"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="ExternalReportWSSService">
+        <wsdl:port name="ExternalReportWSSService" binding="tns:ExternalReportWSSServiceSoapHttp">
+            <soap12:address location="https://ucf1-zoml-fa-ext.oracledemos.com:443/xmlpserver/services/ExternalReportWSSService"/>
+            <wsa:EndpointReference xmlns:wsa="http://www.w3.org/2005/08/addressing">
+                <wsa:Address xmlns:wsa="http://www.w3.org/2005/08/addressing">https://ucf1-zoml-fa-ext.oracledemos.com:443/xmlpserver/services/ExternalReportWSSService</wsa:Address>
+                <wsid:Identity xmlns:wsid="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+                    <dsig:KeyInfo xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+                        <dsig:X509Data>
+                            <dsig:X509Certificate>MIIDVzCCAj+gAwIBAgIILzA3WogMk08wDQYJKoZIhvcNAQELBQAwWTETMBEGCgmSJomT8ixkARkWA2NvbTEWMBQGCgmSJomT8ixkARkWBm9yYWNsZTEVMBMGCgmSJomT8ixkARkWBWNsb3VkMRMwEQYDVQQDEwpDbG91ZDlDQS0yMB4XDTE2MDUwNzA1MzMzNVoXDTI2MDUwNTA1MzMzNVowWzETMBEGCgmSJomT8ixkARkWA2NvbTEWMBQGCgmSJomT8ixkARkWBm9yYWNsZTEVMBMGCgmSJomT8ixkARkWBWNsb3VkMRUwEwYDVQQDEwxGQUVuY3J5cHRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQChJcipQv2NkLOZbrGy6ipcwdW/Z5VMevvOuH3v06brMewL23IpPfkHJRS60404zdGvK84JjM18HcLOPN5GbH+ZtBmMldjVaVL0a0gpGsHDFKPEY7Q62P4zdhI9J7pLh6IdzpcFByIeqcD5fPv8/xddU4WRIbJLLsadMSBWgicaninPfQlDiZzjrnm+zWt3HZadd9prmIGP4MSeBsIIraic6a8T/YYZBpkAINxS5JqpMg0kINgioXmOSn5U5x5Pp71h9F2uhFgJByimyiVsYDJHS64ntWlE/Zf85O0utA+rSMtOJAO0/IN9RwJwRPIL3Sc/ORdLarAf+MkTkEQ1/fopAgMBAAGjITAfMB0GA1UdDgQWBBRph7SlEq4SVOFpFk/li13iHjfswjANBgkqhkiG9w0BAQsFAAOCAQEAcNirKm+HzWF9HbIeA1YoFROHgwuXuMHJGlqoDvVK9YSu1+Nz+LEBE9urt1vmS96w28IhXmCN20YRQUOJQG7oXJ7CKLmmKq4avECnmOqXLrc/ZNXkIZgZmFfztkre7ggBAy5gSxjg+uHL8wPHt2mV/FVlYaFPiMYk/fI4oGC1VBDFQic0lMdq1OtORJ8Qsdmc53Z7tqJ50g96QJGGEpSB1D4Q/CcTAMHogxZiAFC2BYhq2tODo7GR1pemgNOZmZzNRTs981IXqsxzwIOHBGmUTVHVnzaskavTFDfoTtnEI3Wg87LIwfqeD0t2TJlgHBq6Hr0jyQ/crQ9xA4XazRNGVw==</dsig:X509Certificate>
+                            <dsig:X509IssuerSerial>
+                                <dsig:X509IssuerName>CN=Cloud9CA-2, DC=cloud, DC=oracle, DC=com</dsig:X509IssuerName>
+                                <dsig:X509SerialNumber>3400278580633834319</dsig:X509SerialNumber>
+                            </dsig:X509IssuerSerial>
+                            <dsig:X509SubjectName>CN=FAEncryption, DC=cloud, DC=oracle, DC=com</dsig:X509SubjectName>
+                            <dsig:X509SKI>aYe0pRKuElThaRZP5Ytd4h437MI=</dsig:X509SKI>
+                            <dsig:X509Certificate>MIIDazCCAlOgAwIBAgIIMVFncW6V6v4wDQYJKoZIhvcNAQELBQAwWTETMBEGCgmSJomT8ixkARkWA2NvbTEWMBQGCgmSJomT8ixkARkWBm9yYWNsZTEVMBMGCgmSJomT8ixkARkWBWNsb3VkMRMwEQYDVQQDEwpDbG91ZDlDQS0yMCAXDTE2MDUwNzA1MzMzNFoYDzIxMTYwNDEzMDUzMzM0WjBZMRMwEQYKCZImiZPyLGQBGRYDY29tMRYwFAYKCZImiZPyLGQBGRYGb3JhY2xlMRUwEwYKCZImiZPyLGQBGRYFY2xvdWQxEzARBgNVBAMTCkNsb3VkOUNBLTIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCExKNjc9VgWJSoi8nQCEMtszTPcybcEd1Wh/zrhj+bMZIN5UpOxYvj9lBEn9D+9SJxoufEzLMz4Pw3qwWpEo5CKAj8j1x1TDtYZPMk11XV+r/XkFhUKlXHzo6576Ib31oDwCqUVpscc/nDPYgGoYkOyWPleoVkX9AgxYYBjd6dtQS0r6LhWvEaADTQXJZDOx2m0e+9hAadkr7lzdEdChsSjhhK7KZgm3s37h5pLZNJsnE8S+N0PjHClbGbsKf5MK6UtTzMFXz/G7H2/7Q++wky290TvWBKvZojj8rDIvdsvzp1TXIDNnCCCuiFf9OwyGNCDJ9pjr/7lNLpyENxQ/HDAgMBAAGjNTAzMBIGA1UdEwEB/wQIMAYBAf8CAQAwHQYDVR0OBBYEFCI0mXt2DIb70V93XqAsdK9sPBohMA0GCSqGSIb3DQEBCwUAA4IBAQAtOM/GCoVObk1kFgTAj1obhSQ04RDFpC6hsLKWHOJxzTDEluMu+o2XOPHCkzYvO2pf5UzIXkMubpGEzzsNBbZZ7UyO7gPfgBhsUaTzyBoJoVfrrRVa6qIbADA/vExg31LRuENCo0nCcfSidV2NEGiORlXH1A0rSwVFU5WijGAxfESRPwdon/Nq2oqLoqkUH7clMBVVNJckW7cTzXVmnwr5f2drEoagZ72buy4vYpcLoEe1Xo/9emysPcTil2Bf4S2uiDnXtyaOCilLll0iY+458QMIqMtLkl0V/oSneG2k6Z/1rJJbPwP12KtUwCn92DZuu9Etf3iJ8i0opRkLtBAm</dsig:X509Certificate>
+                        </dsig:X509Data>
+                    </dsig:KeyInfo>
+                </wsid:Identity>
+            </wsa:EndpointReference>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

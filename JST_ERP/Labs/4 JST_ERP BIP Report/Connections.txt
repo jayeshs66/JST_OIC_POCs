@@ -1,0 +1,3 @@
+ERPBIP Conn
+https://ucf1-zoml-fa-ext.oracledemos.com/xmlpserver/services/ExternalReportWSSService?wsdl
+username:casey.brown

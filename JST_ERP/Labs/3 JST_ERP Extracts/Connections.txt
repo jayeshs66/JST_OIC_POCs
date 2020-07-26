@@ -1,0 +1,10 @@
+ERP Conn
+Username:bala.gupta
+
+SOAP ERP CBK Conn
+erpcbkinterface-onjobcompletion.wsdl
+
+
+ERP Integration SOAP Conn
+https://ucf1-zoml-fa-ext.oracledemos.com/fscmService/ErpIntegrationService?wsdl
+Username:bala.gupta
