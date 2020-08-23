@@ -1,0 +1,9 @@
+OSC Services Catalog WSDL URL:
+
+https://ucf3-zptk-fa-ext.oracledemos.com/fndAppCoreServices/ServiceCatalogService?wsdl
+
+OSC Events Catalog URL (optional)
+
+https://ucf3-zptk-fa-ext.oracledemos.com/soa-infra
+
+Username:SCM_IMPL

@@ -1,0 +1,34 @@
+{     
+
+      "OrganizationCode": "002",     
+      "OrganizationId": 300000047274447,     
+      "ItemNumber": "AS46336",     
+      "InventoryItemId": 300000047928187,     
+      "ItemRevision": null,     
+      "Subinventory": null,     
+      "LocatorId": null,     
+      "Lot": null,     
+      "OwningEntityId": null,     
+      "PrimaryUnitOfMeasure": "Ea",     
+      "QuantityOnhand": 231,     
+      "AvailableToTransact": 209,     
+      "SecondaryUnitOfMeasure": null,     
+      "SecondaryQuantityOnhand": null,     
+      "SecondaryAvailableToTransact": null,     
+      "ReturnStatus": "SUCCESS",     
+      "ReturnMessageName": null,     
+      "ReturnMessageText": null,     
+      "links": [         
+                  {            
+		     "rel": "self",
+		     "href": "https://adc2-ecpy-fa-ext.oracledemos.com:443/fscmRestApi/resources/11.13.17.11/availableQuantityDetails/99999",             "name": "availableQuantityDetails",             
+                      "kind": "item" 
+		      },         
+		      {  
+		      "rel": "canonical",             
+                      "href":"https://adc2-ecpy-fa-ext.oracledemos.com:443/fscmRestApi/resources/11.13.17.11/availableQuantityDetails/99999",             "name": "availableQuantityDetails",             
+                      "kind": "item"        
+		  }     
+	       ] 
+		 
+}

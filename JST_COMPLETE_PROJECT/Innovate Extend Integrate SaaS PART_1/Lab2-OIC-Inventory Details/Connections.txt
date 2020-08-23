@@ -1,0 +1,16 @@
+Connection Type:
+REST API Base URL
+
+TLS Version:
+TLSv1.2
+
+Connection URL:
+https://ucf3-zptk-fa-ext.oracledemos.com/logisticsApi/resources/11.13.17.11
+
+Enable two way SSL for outbound connections (Optional):
+No
+
+Username:
+SCM_IMPL
+
+
